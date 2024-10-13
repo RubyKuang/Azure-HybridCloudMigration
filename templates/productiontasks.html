@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Production Tasks</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Production Tasks</h1>
+    <table>
+        <tr>
+            <th>Task ID</th>
+            <th>Product ID</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Status</th>
+            <th>Production Line</th>
+        </tr>
+        {% for productiontasks in productiontasks %}
+        <tr>
+            <td>{{ productiontasks['TaskID'] }}</td>
+            <td>{{ productiontasks['ProductID'] }}</td>
+            <td>{{ productiontasks['StartDate'] }}</td>
+            <td>{{ productiontasks['EndDate'] }}</td>
+            <td>{{ productiontasks['Status'] }}</td>
+            <td>{{ productiontasks['ProductionLine'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+

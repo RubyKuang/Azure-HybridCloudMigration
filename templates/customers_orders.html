@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customers and Orders</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        h1, h2 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Customers and Orders</h1>
+    <table>
+        <tr>
+            <th>Customer ID</th>
+            <th>Company Name</th>
+            <th>Contact Name</th>
+            <th>Order ID</th>
+            <th>Order Date</th>
+            <th>Total Amount</th>
+            <th>Status</th>
+        </tr>
+        {% for entry in customers_orders %}
+        <tr>
+            <td>{{ entry['CustomerID'] }}</td>
+            <td>{{ entry['CompanyName'] }}</td>
+            <td>{{ entry['ContactName'] }}</td>
+            <td>{{ entry['OrderID'] }}</td>
+            <td>{{ entry['OrderDate'] }}</td>
+            <td>{{ entry['TotalAmount'] }}</td>
+            <td>{{ entry['Status'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

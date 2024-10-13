@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Products</h1>
+    <table>
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Stock Quantity</th>
+            <th>Specifications</th>
+            <th>Supplier</th>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td>{{ product['ProductID'] }}</td>
+            <td>{{ product['ProductName'] }}</td>
+            <td>{{ product['Category'] }}</td>
+            <td>{{ product['Price'] }}</td>
+            <td>{{ product['StockQuantity'] }}</td>
+            <td>{{ product['Specifications'] }}</td>
+            <td>{{ product['Supplier'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

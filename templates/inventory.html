@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventory</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Inventory</h1>
+    <table>
+        <tr>
+            <th>Inventory ID</th>
+            <th>Product ID</th>
+            <th>Warehouse</th>
+            <th>Quantity</th>
+            <th>Last Updated</th>
+            <th>Min Stock Level</th>
+        </tr>
+        {% for inventory in inventory %}
+        <tr>
+            <td>{{ inventory['InventoryID'] }}</td>
+            <td>{{ inventory['ProductID'] }}</td>
+            <td>{{ inventory['Warehouse'] }}</td>
+            <td>{{ inventory['Quantity'] }}</td>
+            <td>{{ inventory['LastUpdated'] }}</td>
+            <td>{{ inventory['MinStockLevel'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
